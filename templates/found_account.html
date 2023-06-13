@@ -1,0 +1,32 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+{% include "header.html" %}
+<header class="masthead" style="background-image: url('https://images.pexels.com/photos/6964173/pexels-photo-6964173.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Reset</h1>
+            <span class="subheading">Find your account</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<div class="container">
+         {% if name: %}
+          <h3>We found an account with that email.</h3>
+          <p>Name: <strong>{{name}}</strong></p>
+          <p>Email: <strong>{{email}}</strong></p>
+        <div class="clearfix pt-3">
+              <a class="btn btn-primary float-left" href="{{url_for('get_code', name=name, email=email)}}">Get Verification Code</a>
+            </div>
+      </div>
+        {% endif %}
+
+{% include "footer.html" %}
+{% endblock %}
