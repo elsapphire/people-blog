@@ -316,7 +316,12 @@ def change_password(email):
                 method='pbkdf2:sha256',
                 salt_length=10
             )
+
             account_to_update = User.query.filter_by(email=email).first()
+            print(account_to_update.password)
+            if password == account_to_update.password:
+                flash("You've already used that password. Type a new one")
+                return redirect(url_for('change_password'))
             account_to_update.password = password
             db.session.commit()
 

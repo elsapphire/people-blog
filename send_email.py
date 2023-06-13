@@ -36,7 +36,7 @@ class SendEmail:
                 to_addrs=self.email,
                 msg=f"Subject:Request To Reset Password \n\n"
                     f"Hello {self.name}. \nYou requested to change your password on The People's Blog.\n"
-                    f"DO NOT SHARE THIS CODE WITH ANYONE. \nYour verification code is: {int(joined_list)}."
+                    f"DO NOT SHARE THIS CODE WITH ANYONE. \nYour verification code is: {joined_list}."
                     f"\nIf you did not make this request, kindly log in to your account and change your password. "
                     f"\nThank you, the people's blog, 2023."
             )
